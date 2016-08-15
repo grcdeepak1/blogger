@@ -10,6 +10,12 @@
   <% if @article.image.exists? %>
     <p><%= image_tag @article.image.url %></p>
   <% end %>
+</p><br>
+<p>Attachements</p>
+<p>
+  <% @article.attachments.each do |at| %>
+    <p><%= image_tag at.image.url %></p>
+  <% end %>
 </p>
 <h3>Comments (<%= @article.comments.size %>)</h3>
 <%= render partial: 'articles/comment', collection: @article.comments %>

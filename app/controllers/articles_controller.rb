@@ -31,6 +31,8 @@ class ArticlesController < ApplicationController
 
   def edit
     @article = Article.find(params[:id])
+    @attachment = Attachment.new
+    @attachment.article_id = @article_id
   end
 
   def update
